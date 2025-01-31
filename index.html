@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <title>Cozy Corners</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      max-width: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .slide {
+      width: 100%;
+      height: 800px;
+      background-image: url('./logo1.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header .logo {
+        order: 2; /* Moves logo to the right */
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        order: 1; /* Moves links to the left */
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .slide {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide {
+        height: 200px;
+      }
+    }
+
+    .text {
+      padding: 50px;
+      text-align: center;
+      background-color: #d5e4e6;
+    }
+
+    .text h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 25px;
+      color: rgb(53, 51, 51);
+    }
+
+    .bottom-section {
+      width: 100%;
+      height: 600px;
+      background-image: url('./back2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .bottom-section .text-overlay {
+      position: absolute;
+      top: 120px;
+      right: 150px;
+      color: rgb(55, 52, 52);
+      font-size: 27px;
+      line-height: 1.6;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: flex-start;
+      padding: 30px;
+      padding-left: 150px;
+    }
+
+    .gallery {
+      width: 90%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 100px;
+    }
+
+    .gallery img {
+      width: 300px; /* Fixed size for all images */
+      height: 300px; /* Fixed height for uniformity */
+      object-fit: cover; /* Ensures images don't get distorted */
+      margin: 2px;
+      outline: 2px solid black;
+      border-radius: 10px;
+    }
+
+    .card {
+      text-align: center;
+      max-width: 350px;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 2px solid #e5e5e5;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 50px auto;
+    }
+
+    .feature-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .feature-description {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .pro {
+      margin-top: 5px;
+    }
+
+    .Key {
+      display: flex;
+      justify-content: center;
+      padding-top: 100px;
+    }
+
+    .key h1 {
+      font-size: xx-large;
+    }
+
+    .about-section {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: rgb(55, 55, 55);
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+      max-width: 800px;
+      margin: 10px auto;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    footer a {
+      color: #f4a261;
+      text-decoration: none;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .links {
+        padding-left: 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .gallery {
+        flex-direction: column;
+        padding-top: 50px;
+      }
+
+      .card {
+        max-width: 90%;
+      }
+
+      .bottom-section .text-overlay {
+        right: 20px;
+        font-size: 18px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+
+      footer p {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./logo1.jpeg" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#About">Reach Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="slide" id="home"></div>
+
+  <div class="text">
+    <h1>Great Design comes from great choices. Make your interior shine with the right section today!</h1>
+  </div>
+
+  <div class="bottom-section" id="home">
+    <div class="text-overlay">
+      We're all about ensuring every bit of a home reflects the personality and style of the people living there. By designing your house with dedication and skill, we ensure each corner of your living space echoes the quality of a house that's designed well and a place you can call home.
+    </div>
+  </div>
+
+  <div class="links" id="options">
+    <ol>
+      <h1><li><a href="./services.html">Our Services</a></li></h1>
+      <h1><li><a href="./3D Designs.html"> Our 3D Designs</a></li></h1>
+      <h1><li><a href="./Onsite Execution.html">Our Onsite Executions</a></li></h1>
+    </ol>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <img src="./s1.png">
+    <img src="./s2.png">
+    <img src="./s3.png">
+    <img src="./s4.png">
+    <img src="./s5.png">
+    <img src="./s6.png">
+    <img src="./s7.png">
+    <img src="./s8.png">
+    <img src="./s9.png">
+    <img src="./s10.png">
+    <img src="./s11.png">
+    <img src="./s12.png">
+  </div>
+
+  <h1 class="Key">Key Features</h1>
+
+  <div class="card pro">
+    <img src="./p1.png" alt="3D Visualization" class="feature-image">
+    <div class="feature-description">
+      Imagine your home before you even step in! A detailed 3D walkthrough gives you a preview of your home interiors. We create stunning concepts in 3D, using advanced technologies to give you a realistic feel of your future home.
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="./p2.png" alt="Execution" class="feature-image">
+    <div class="feature-description">
+      We build and execute home interiors to perfection. From fabulous false ceilings, glamorous kitchens, stunning wardrobes to luxurious sofas. Our team of craftsmen and supervisors transform dreams into reality.
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="./p3.png" alt="Onsite Supervision" class="feature-image">
+    <div class="feature-description">
+      Our talented team of Project Managers and site supervisors ensure that your Home Interiors are a hassle-free and pleasant experience.
+    </div>
+  </div>
+
+  <div class="about-section" id="About">
+    <h2>Reach Us</h2>
+    <p>SRAVAN S. (INTERIOR DESIGNER)</p>
+    <p><img src="./phone.png" alt="phone" width="18px" height="18px">  Mobile Numbers: 7995369122, 9347952433</p>
+    <p><img src="./mail.png" alt="mail" width="22px" height="22px">  Email: cozycorners1vs@gmail.com</p>
+    <p><img src="./address.png" alt="address" width="20px" height="20px">  Address: G1, Bhargavi Residency Layout, Nizampet, Hyderabad - 500090</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Cozy Corners. All Rights Reserved.</p>
+    <p>Designed and Developed By Work Globally.</p>
+  </footer>
+
+</body>
+</html>
